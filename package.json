@@ -11,13 +11,13 @@
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/apps/nest-event-pattern/main",
+    "start:prod": "node dist/apps/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./apps/nest-event-pattern/test/jest-e2e.json"
+    "test:e2e": "jest --config ./apps/test/jest-e2e.json"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
@@ -78,8 +78,10 @@
     ],
     "moduleNameMapper": {
       "^@app/logger(|/.*)$": "<rootDir>/libs/logger/src/$1",
+      "^@app/matte(|/.*)$": "<rootDir>/libs/matte/src/$1",
       "^@app/redis(|/.*)$": "<rootDir>/libs/redis/src/$1",
-      "^@app/redis-provider(|/.*)$": "<rootDir>/libs/redis-provider/src/$1"
+      "^@app/redis-provider(|/.*)$": "<rootDir>/libs/redis-provider/src/$1",
+      "^@app/tcp(|/.*)$": "<rootDir>/libs/tcp/src/$1"
     }
   }
 }

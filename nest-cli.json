@@ -1,14 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/nest-event-pattern/src",
   "compilerOptions": {
     "deleteOutDir": true,
-    "webpack": true,
-    "tsConfigPath": "apps/nest-event-pattern/tsconfig.app.json"
+    "webpack": true
   },
   "monorepo": true,
-  "root": "apps/nest-event-pattern",
   "projects": {
     "logger": {
       "type": "library",
@@ -17,6 +14,15 @@
       "sourceRoot": "libs/logger/src",
       "compilerOptions": {
         "tsConfigPath": "libs/logger/tsconfig.lib.json"
+      }
+    },
+    "matte": {
+      "type": "library",
+      "root": "libs/matte",
+      "entryFile": "index",
+      "sourceRoot": "libs/matte/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/matte/tsconfig.lib.json"
       }
     },
     "redis": {
@@ -53,6 +59,15 @@
       "sourceRoot": "apps/service-c/src",
       "compilerOptions": {
         "tsConfigPath": "apps/service-c/tsconfig.app.json"
+      }
+    },
+    "tcp": {
+      "type": "library",
+      "root": "libs/tcp",
+      "entryFile": "index",
+      "sourceRoot": "libs/tcp/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/tcp/tsconfig.lib.json"
       }
     }
   }
